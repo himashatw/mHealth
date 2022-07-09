@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mhealth/components/emoticon_face.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(25.0),
             child: Column(
               children: [
+                // GREETING SECTION
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -55,6 +57,133 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                     )
+                  ],
+                ),
+
+                SizedBox(
+                  height: 25,
+                ),
+                // Search bar
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue[600],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: EdgeInsets.all(12),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Search",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "How do you feel?",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(
+                      Icons.more_horiz,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
+
+                SizedBox(
+                  height: 25,
+                ),
+
+                // MOODS
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        EmoticonFace(
+                          emoticonFace: "😓",
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Bad",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        EmoticonFace(
+                          emoticonFace: "😀",
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Fine",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        EmoticonFace(
+                          emoticonFace: "😁",
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Well",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        EmoticonFace(
+                          emoticonFace: "👌",
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Excellent",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // BAD
+                    // EXCELLENT
                   ],
                 )
               ],
