@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mhealth/components/emoticon_face.dart';
+import 'package:mhealth/components/exercise_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,9 +16,9 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.blue[700],
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.message), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
           ],
         ),
         body: SafeArea(
@@ -191,19 +192,70 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-
-                        // BAD
-                        // EXCELLENT
                       ],
                     ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 25,
+              ),
               Expanded(
                 child: Container(
-                  color: Colors.white,
+                  padding: EdgeInsets.all(25.0),
+                  color: Colors.grey[200],
+                  child: Center(
+                    child: Column(
+                      children: [
+                        // Exercise Heading
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Exercises",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            Icon(Icons.more_horiz),
+                          ],
+                        ),
+
+                        SizedBox(
+                          height: 20,
+                        ),
+
+                        // LIST VIEW OF EXERCISES
+                        Expanded(
+                          child: ListView(
+                            children: [
+                              ExerciseTile(
+                                icon: Icons.favorite_outline,
+                                exerciseName: "Speaking Skills ",
+                                numberOfExercise: 12,
+                                color: Colors.orange,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.person,
+                                exerciseName: "Reading Skills ",
+                                numberOfExercise: 8,
+                                color: Colors.green,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.star,
+                                exerciseName: "Writing Skills ",
+                                numberOfExercise: 98,
+                                color: Colors.pink,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ));
