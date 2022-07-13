@@ -203,7 +203,11 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(25.0),
-                  color: Colors.grey[200],
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(25)),
+                    color: Colors.grey[200],
+                  ),
                   child: Center(
                     child: Column(
                       children: [
